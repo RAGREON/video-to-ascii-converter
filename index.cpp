@@ -1,21 +1,12 @@
-#include "./converter.hpp"
-#include "./player.hpp"
+#include "./nox.hpp"
+#include <cstdlib>
 
 int main(int argc, char** argv) {
-  std::string videoPath;
-  std::cout << "enter video path: ";
-  std::cin >> videoPath;
+  int width = atoi(argv[2]);
+  int height = atoi(argv[3]);
 
-  Converter converter;
-  converter.convertVideoToAscii(videoPath.c_str());
-
-  VideoMeta meta = Converter::getVideoMeta("./aura.mp4");
-
-  Player player;
-  player.openVideo("./video.txt");
-  player.loadMeta(meta);
-
-  player.playVideo();
+  Nox nox(argv[1], width, height);
+  nox.videoToAscii();
 
   return 0;
 }
