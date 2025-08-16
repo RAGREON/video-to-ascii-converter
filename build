@@ -1,0 +1,7 @@
+#!/bin/bash
+
+g++ index.cpp \
+    -IC:/msys64/mingw64/include/opencv4 \
+    -LC:/msys64/mingw64/lib \
+    -lopencv_core -lopencv_imgcodecs -lopencv_imgproc -lopencv_highgui -lopencv_videoio \
+    -o index.exe
